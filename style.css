@@ -1,0 +1,153 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    background-color: #121212;
+    background-image: url('https://media.discordapp.net/attachments/1180169303866212512/1195891151178317855/DALLE_2024-01-14_03.42.47_-_Create_a_contemporary_digital_banner_featuring_the_name_AYOOSH_in_a_bold_artistic_font._The_letters_should_appear_to_be_disintegrating_into_abstrac.png?ex=65b5a36d&is=65a32e6d&hm=930ff51dc569b79806567489ad74c99ed1556c0a556bd4f887e31e713b6eca64&=&format=webp&quality=lossless&width=1180&height=675'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#content {
+    background-color: rgba(30, 30, 30, 0.9);
+    color: #e0e0e0;
+    width: 80%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 30px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease-in-out;
+}
+
+#content:hover {
+    transform: scale(1.03);
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #0a7f42;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #0d944f;
+    transform: scale(1.05);
+}
+
+@keyframes glitch {
+    0% {
+        opacity: 1;
+        transform: translateZ(0);
+        clip-path: polygon(0 0, 100% 0, 100% 25%, 0 25%);
+    }
+    25% {
+        clip-path: polygon(0 25%, 100% 25%, 100% 50%, 0 50%);
+    }
+    50% {
+        opacity: 1;
+        transform: translate3d(5px, 0, 0);
+        clip-path: polygon(0 50%, 100% 50%, 100% 75%, 0 75%);
+    }
+    75% {
+        clip-path: polygon(0 75%, 100% 75%, 100% 100%, 0 100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateZ(0);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+.glitch {
+    animation: glitch 0.5s linear infinite;
+}
+
+#hoverText {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 1.5em;
+    opacity: 1;
+    pointer-events: none;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+.image-box {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    min-height: 200px;
+}
+
+.image-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
+
+@media (max-width: 600px) {
+    .image-box {
+        width: 90%;
+    }
+
+    .image-box img {
+        border-radius: 5px;
+    }
+
+    #hoverText {
+        font-size: 1em;
+        top: 5px;
+    }
+
+    #content {
+        width: 95%;
+        padding: 15px;
+    }
+
+
+
+    p {
+        font-size: 0.9em;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 0.8em;
+    }
+}
